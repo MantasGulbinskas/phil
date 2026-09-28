@@ -6909,3 +6909,49 @@ Full grading in RETRO-20260928-0415.
 - **Scheduled-close crypto uses ladder-implied sd (5eed485): kept.** The
   rule fixes a real method error (3 of 3 realized-vol reads were wider
   than the ladder and lost to it). Forecast-only stands; re-grade at n=8.
+
+## 2026-09-28 22:2xZ update: 5 Treasury-yield-touch + 2 box-office forecasts settled (LIGHT tick)
+
+| Forecast | est / mkt | side taken | outcome | note |
+|---|---|---|---|---|
+| 10y hit 5.20% Sep (`fdedb184ad3e`) | No 0.28 / ask 0.09 | No | **Yes (wrong)** | driftless-leaning read on Sep24 print |
+| 10y hit 5.20% Sep (`8b9d86b667bb`, supersedes above) | No 0.22 / ask 0.16 | No | **Yes (wrong)** | demeaned bootstrap after overnight futures move |
+| 10y hit 5.20% Sep (`3ed526b57eca`, supersedes above) | No 0.47 / ask 0.27 | No | **Yes (wrong)** | driftless Gaussian; note explicitly flagged "shade view: raw bootstrap No 0.35" and did not use it |
+| 30y hit 5.50% Sep (`99df204b7f85`) | Yes 0.67 | Yes | **Yes (right)** | own read already leaned on raw/drift-inclusive bootstrap + overnight futures |
+| 30y hit 5.55% Sep (`84012264b65d`) | Yes 0.31 | Yes | **Yes (right, low-confidence)** | driftless-only (no drift term at all), won on side by luck not calibration |
+| Heart of the Beast 17-20m (`cec5bff18abf`) | Yes 0.40 | Yes | **No (wrong)** | trade-press Gaussian around a point estimate |
+| Forgotten Island <13m (`bb60348ab311`) | Yes 0.90 | No | **No... wrong side** | same trade-press Gaussian method |
+
+All seven are `forecast-only` (touch-family / box-office self-model vetoes,
+`wide-spread-veto` or `outside-view-veto`) — zero pnl impact, calibration
+only. **Pattern worth encoding: on the SAME market (10y-hits-5.20%-in-Sep),
+three successive forecasts across three days all put the too-low probability
+on the side that actually happened, and the second and third notes each
+independently observed that a drift-inclusive ("raw") bootstrap read was
+closer to the market than the driftless/demeaned read the agent actually
+recorded — and recorded the driftless number anyway.** The one Treasury-touch
+row that got the *side* right with real skill (30y-5.50%, `99df204b7f85`) is
+the one that used the drift-inclusive read from the start. The 30y-5.55% win
+is a coin-flip side match on a 31% call, not evidence for the driftless
+method.
+
+**Rule added:** for any future Treasury-yield-touch forecast, `est_prob` must
+be the drift-inclusive ("raw") bootstrap output, not the driftless or
+demeaned variant — matching the standing gas/commodity-touch and crypto-touch
+rulings that a no-drift model underweights a market already trending toward
+the barrier. If a driftless/demeaned number is computed for comparison,
+record it as shade only, never as `est_prob`. n=3 on one market is thin;
+re-grade this rule the next time a Treasury-touch forecast settles.
+
+Separately: the model behind these rows (`work/tsy5.py` per the forecast
+notes) was never checked into `strategy/tools/` — same ad hoc-script gap the
+crypto-touch ruling (DEEP-2026-09-01) already closed for that family by
+requiring a named, dated tool. Until a `strategy/tools/` Treasury-touch
+script exists, treat this sub-family as unvalidated-method on top of the
+standing touch-family forecast-only gate.
+
+Box-office: two more wrong-side rows on the trade-press-Gaussian method
+(Heart of the Beast, Forgotten Island), both already forecast-only under the
+standing box-office self-model veto. No new rule — this reinforces the
+existing veto rather than changing it; small-n noise is plausible on any
+single weekend's slate.
