@@ -3585,3 +3585,16 @@ watch.py shape regexes, subclass auto-tagger.
 placed (quake <=6, count closed at 4 -> WON pending resolution), 0
 settled, 5 open. No reverts; 11 graded watch items archived out of
 schedule.json.
+
+## 2026-09-28 12:2xZ - mech gas: the top-up target is the agent EOA, not the safe (FULL cycle, operator machine)
+
+- **Correction to the ENDORSED mech item.** `wallet_info` now shows the
+  polygon service safe at 15 POL, so the "top up the service safe"
+  act has happened, but the mech path still fails the same way:
+  `insufficient funds for gas * price + value: balance
+  140390720573003474, tx cost 158856982804685966` (request
+  phil-20260928-1235-4903419-ma-r1). That balance, 0.1404 POL, is the
+  **agent EOA** (`0x3C79...1bAD`), which pays gas for the auto-deposit
+  Safe transaction. Fix: send at least ~0.5 POL to the agent EOA (a few
+  deposits' worth), or pre-fund the mech prepaid balance from the safe.
+  Status: PROPOSED (operator act). R1 sample missed 6 days running.
