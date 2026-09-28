@@ -156,7 +156,12 @@ PY
   # step 9 and its rebase path mandate exactly these commands, and a
   # permission-blocked "checkout -B" strands the cycle's commits on a
   # detached HEAD (2026-08-28).
+  # A bare procedure document as the prompt reads as context, not a task:
+  # on 2026-09-28 Sonnet 5 answered "what would you like me to do?" and
+  # exited without a tool call on about half the ticks. Saying so outright
+  # started the cycle 5/5.
   CMD=(claude -p "$PROMPT" --model "$MODEL"
+       --append-system-prompt "You are running unattended under loop.sh; no human is watching. The user message is the trading cycle procedure: begin executing it immediately from step 0. Never ask what to do."
        --allowedTools "Read" "Glob" "Grep" "WebSearch" "WebFetch"
          "Edit" "Write" "Task"
          "Bash(python3 core/*)" "Bash(git add:*)" "Bash(git commit:*)"
