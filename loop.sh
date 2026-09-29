@@ -159,9 +159,12 @@ PY
   # A bare procedure document as the prompt reads as context, not a task:
   # on 2026-09-28 Sonnet 5 answered "what would you like me to do?" and
   # exited without a tool call on about half the ticks. Saying so outright
-  # started the cycle 5/5.
+  # started the cycle 5/5. The env values are spelled out because the
+  # session's sandbox blocks reading env vars: unable to see
+  # PHIL_PUSH_BY_LOOP, the agent tried its own push and logged a "push
+  # discrepancy" commit (2026-09-29).
   CMD=(claude -p "$PROMPT" --model "$MODEL"
-       --append-system-prompt "You are running unattended under loop.sh; no human is watching. The user message is the trading cycle procedure: begin executing it immediately from step 0. Never ask what to do."
+       --append-system-prompt "You are running unattended under loop.sh; no human is watching. The user message is the trading cycle procedure: begin executing it immediately from step 0. Never ask what to do. Environment (env vars are not readable from this session, so they are stated here): PHIL_PUSH_BY_LOOP=1, so commit but never push; loop.sh pushes after you exit, and an unpushed commit is expected. PHIL_LEASE=$PHIL_LEASE, already handled by loop.sh; never run core/lease.py yourself."
        --allowedTools "Read" "Glob" "Grep" "WebSearch" "WebFetch"
          "Edit" "Write" "Task"
          "Bash(python3 core/*)" "Bash(git add:*)" "Bash(git commit:*)"
