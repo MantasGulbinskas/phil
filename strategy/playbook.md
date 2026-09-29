@@ -6950,6 +6950,21 @@ requiring a named, dated tool. Until a `strategy/tools/` Treasury-touch
 script exists, treat this sub-family as unvalidated-method on top of the
 standing touch-family forecast-only gate.
 
+**2026-09-29 21:5xZ update (RETRO-20260929-2215): 4th row settled, rule
+re-confirmed, not re-graded fresh.** `a41e6e996b85` (10y hit 5.25% Sep) was
+recorded 2026-09-25T01:10Z — before this rule existed — so it's a 4th
+historical data point, not a forward test:
+
+| Forecast | est / mkt | side | outcome | note |
+|---|---|---|---|---|
+| 10y hit 5.25% Sep (`a41e6e996b85`) | Yes 0.46 / mid 0.65 | (forecast-only, no side) | **Yes** | raw-bootstrap component was 0.53, demeaned 0.33; agent recorded a 0.46 blend leaning low, same underweight-drift failure as the 5.20% siblings |
+
+Raw (0.53) would still have underestimated the 0.65 outcome, but it beats
+the recorded blend (0.46) — consistent with, not a new instance of, the
+standing rule. n=4 same market family; the rule (`est_prob` = drift-inclusive
+raw bootstrap, not blended/demeaned) stands unchanged. Still forecast-only
+until a named `strategy/tools/` script replaces `work/tsy5.py`.
+
 Box-office: two more wrong-side rows on the trade-press-Gaussian method
 (Heart of the Beast, Forgotten Island), both already forecast-only under the
 standing box-office self-model veto. No new rule — this reinforces the
