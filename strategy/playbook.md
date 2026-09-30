@@ -1995,6 +1995,21 @@ move as favorable or adverse.
      (UI settings, which mirror/table); it does not apply to mechanical
      resolution sources (a number printed in an official filing/API),
      which aren't implicated by this evidence.
+   - **Re-scan the whole board, not just the named rivals, on repeat
+     leaderboard checks (RETRO-20260930-1849).** The Alibaba
+     best-Chinese-AI-model market was re-checked three times (Sep17/20/23,
+     `1e0944b4f952`→`f41e0b09f084`→`a733d6439c5a`) and every check only
+     re-verified the same qwen/glm/kimi comparison from the first read.
+     Xiaomi's mimo-v2.6-pro entered the board around Sep22 and had taken
+     the lead by Sep27 — none of the three Alibaba re-checks looked past
+     the originally-named rivals to see it, and all three lost. The
+     sibling Xiaomi forecast on the SAME board (`367d2b7c6fe4`, Sep27)
+     caught the new entrant independently and won. On every re-check of an
+     arena.ai (or similar N-lab) leaderboard market, re-scan the current
+     top rows fresh rather than only the previously-named rivals, and if a
+     sibling per-lab forecast on the same board names a different leader,
+     treat that as a trigger to re-check any other still-open forecast on
+     that board before it settles.
    - **Outside-view veto on large claimed edges (DEEP-2026-08-07).** The
      settled record splits cleanly on claimed edge size: bets claiming
      edge > 0.10 are **0W/5L, -$25, brier_delta +0.4587** (agent brier
