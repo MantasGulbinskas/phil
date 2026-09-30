@@ -7071,3 +7071,36 @@ outside-view-veto` by category): n=9, 4W/5L, pnl +$44.74, brier_delta
 
 Ruling: no boundary change. The dip/hit sign clarification is a reasoning
 check to apply going forward, not a new veto or gate.
+
+## 2026-09-30 22:5xZ update: Sep30 largest-company snapshot + Iran ceasefire rows settle, one `outside-view-veto` row
+
+`ce1f37ed95c0` (NVIDIA largest company by market cap on Sep30,
+outside-view-veto, est 0.78 vs mid 0.9145) settled **Yes**. My
+self-modeled relative-vol Gaussian (6.3% log-gap, ~0.85 sigma) put the
+flip risk at 22%; the market said ~9% and was right. The veto did its job:
+the claimed No-side edge (0.134) would have lost the full stake.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| NVDA largest Sep30 (`ce1f37ed95c0`, outside-view-veto) | 0.78 / 0.9145 | No | +0.134 | Yes | **-5.00** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 185 settled, 177 fillable, 74W/103L, pnl +$126.30,
+brier_delta +0.0310, held-out +$120.41. Side split: no 130 rows/122
+trades/56W-66L/+$102.10 (this row adds to the no side); yes 55 rows/55
+trades/18W-37L/+$24.20. The reconciliation gap flagged at 22:0xZ is
+still open for the next deep retro.
+
+Sibling rows: `5a9d7226c850` (Apple largest, est 0.07 vs 0.0825,
+no-edge) settled No, which is consistent. The three Iran ceasefire rows
+all settled Yes: `432ad85ae2ac` est 0.70 vs 0.805 (Sep19, superseded
+by `fc7e933fc077` est 0.87 vs 0.865 on Sep25), and `fffde730834c` est
+0.85 vs 0.855. The Sep19 0.70 discounted a status-quo continuation 11
+days out, the market held the higher number, and the market was right.
+
+Ruling: no rule change. This is one more settled row where a
+self-modeled volatility estimate on a scheduled snapshot of a public
+metric overstated tail risk against a liquid market, and the
+fact-finality gate (DEEP-2026-08-30) already blocks that shape. n=1 on
+largest-company snapshots this month; the ai-leaderboard/market-microstructure
+caution stands.
