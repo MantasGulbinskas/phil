@@ -7009,3 +7009,65 @@ Box-office: two more wrong-side rows on the trade-press-Gaussian method
 standing box-office self-model veto. No new rule — this reinforces the
 existing veto rather than changing it; small-n noise is plausible on any
 single weekend's slate.
+
+## 2026-09-30 22:0xZ update: Sep month-end Treasury-yield-touch family settles, one `outside-view-veto` row, one `wide-spread-veto` refusal
+
+Month-end (Sep30 12:00Z par-yield cutoff) settled the rest of this
+cycle's Treasury-touch slate: 30y dip-below-5.21% (both `490222bcfd74` and
+its supersede `3e4351bdb5c6`, outcome No), 30y hit-5.60% (both
+`7034bac6535b` and its supersede `9d66ad04563a`, outcome Yes), and 5y
+hit-5.10% (both `3db163312e35` and its supersede `ae94ccafa860`, outcome
+No). All forecast-only (no-edge/outside-view-veto/wide-spread-veto), zero
+direct pnl.
+
+**Extends, does not replace, the 2026-09-28 drift-inclusive-bootstrap
+rule.** `9d66ad04563a` (hit-5.60%, est 0.45, explicitly cited "6-day up
+momentum") and `ae94ccafa860` (5y hit-5.10%, est 0.22, explicitly cited
+"Sep uptrend 4.55->4.98 nudges up") both used drift-aware reasoning and
+both landed on the right side. `3e4351bdb5c6` (dip-below-5.21%, est 0.30)
+is the one worth a rule clarification: it is a **dip** question in the
+same persistent-upward-yield regime the hit-side rows were trading. The
+standing rule says "drift-inclusive raw bootstrap, not driftless" because
+a no-drift model underweights a market trending toward a hit barrier —
+but for a DIP barrier the same upward drift cuts the other way: it should
+LOWER P(dip), not raise it. `3e4351bdb5c6`'s note reasoned from a market
+pair-test ("PM prices +10bp at 0.615 and -9bp at 0.12, a drift the 10y
+ladder does not show") and shaded the estimate UP from 0.04 to 0.30,
+moving further from the eventual outcome (No) and from the market's own
+read (ask 0.13) rather than closer. **Rule addition: when applying the
+drift-inclusive bootstrap to a Treasury-touch question, the drift term's
+sign must match the barrier direction — a persistent-direction regime
+raises P(hit) on a same-direction barrier and lowers P(hit) on an
+opposite-direction (dip) barrier. Shading toward a market price without
+checking which direction the drift term should push is how `3e4351bdb5c6`
+happened.** n=1 on this specific dip-side error; re-grade if another
+dip-barrier Treasury-touch row settles.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| 30y dip-below-5.21% (`3e4351bdb5c6`, outside-view-veto) | 0.30 / 0.12 | Yes | +0.170 | No | **-5.00** |
+
+`3db163312e35` (5y hit-5.10%, wide-spread-veto) is a refusal, not a
+fillable trade: No-side fill would need the 0.96 No-ask (Yes bid/ask
+0.04/0.79), outside the [0.02, 0.95] fillable band — settled-row count
+only, no P&L row, same shape as the existing `9eff80f25296`/`f7fcd3a05a31`
+refusals in this ledger.
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 184 settled declined forecasts, 176 fillable CF
+trades, 8 refused, 74W/102L, pnl +$131.30, brier_delta +0.0310, held-out
++$125.41. Side split: no 129 rows/121 trades/56W-65L/+$107.10; yes 55
+rows/55 trades/18W-37L/+$24.20 (this row adds to the yes side). Note: the
+hand-kept table has a known reconciliation gap — `core/counterfactual.py
+reconcile` currently flags 10 settled outside-view-veto rows never
+entered here (mostly Sept dated) plus a unit-scale mismatch ($5 vs the
+older 1u convention) — pre-existing, not created by this row, and too
+large to backfill in a light tick; flagged for the next deep retro rather
+than worked around.
+
+Econ-rates category (`core/counterfactual.py ledger --skip-reason
+outside-view-veto` by category): n=9, 4W/5L, pnl +$44.74, brier_delta
+-0.0428 — small-n, no boundary claim.
+
+Ruling: no boundary change. The dip/hit sign clarification is a reasoning
+check to apply going forward, not a new veto or gate.
