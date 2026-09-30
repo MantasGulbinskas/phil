@@ -6632,6 +6632,30 @@ event page #1 and a stale "27%" snippet; WTI: event page #1, laikalabs
 "76%", chanceindex), price-leak instances five and six. Grade at
 settlement; nothing to act on yet.
 
+**Settled 2026-09-30 (BEA release): August Core PCE YoY printed 3.0%,
+outside every offered bracket (3.1 through 3.5).** The 3.3 No bet
+(8894592b953a) won by construction and the MoM 0.2% forecast
+(275271e3d70b) won outright, but the miss is the interesting part: the
+revision camp (Warsh "about 3.2", GS tracker 3.16) had the direction
+right yet still landed 0.16-0.2pp above the actual print, and the own
+distribution that cycle (3.1:0.14 3.2:0.49 3.3:0.24 3.4:0.10) put zero
+mass below 3.1 - the bracket menu itself had no slot for the outcome.
+Cause, confirmed by the BEA release commentary: an annual benchmark
+revision restated July's core PCE YoY down from 3.3% to 3.0% in the same
+release, which is a level shift in the whole series, not a monthly
+momentum surprise - no amount of nowcasting the August month-over-month
+move would have caught it. Verdict on the pre-registered question:
+"running at about" was not just looser than the Powell-era formula, it
+was anchored to the pre-revision base; do not treat a Fed-chair "about
+X percent" staff estimate as bounding the outcome to nearby brackets
+when a BEA annual benchmark revision is due in the same release (the
+revision calendar is published in advance on bea.gov/news/schedule).
+**Rule, effective now:** before setting a bracket-menu distribution for
+a YoY economic print, check whether the release carries a scheduled
+annual/comprehensive benchmark revision; if it does, widen the own
+distribution to put non-trivial mass outside the visible bracket range
+rather than confining it to brackets adjacent to the last print.
+
 ## News-cell process-shape bar (enacted RETRO-20260918-1518)
 
 **Rule.** In category `news`, a candidate is **forecast-only** (skip-reason
