@@ -7104,3 +7104,24 @@ metric overstated tail risk against a liquid market, and the
 fact-finality gate (DEEP-2026-08-30) already blocks that shape. n=1 on
 largest-company snapshots this month; the ai-leaderboard/market-microstructure
 caution stands.
+
+## 2026-09-30 23:4xZ update: one `wide-spread-veto` row settled (silver dip $60 Sep)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Silver dip $60 Sep (`3eb144c9dfc5`, wide-spread-veto) | 0.26 / 0.235 | Yes | −0.020 | No | **−5.00** |
+
+Mechanical Yes fill is at the 0.28 ask (book 0.19/0.28). Edge was negative,
+so this was a correct non-trade on edge alone, before the spread veto.
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+wide-spread-veto`): 33 settled rows, 28 fillable CF trades, 5 refused,
+15W/13L, pnl −$37.94, dBrier −0.0036. Side split: no 18 rows/15 trd/7W-8L/
+−$26.43; yes 15 rows/13 trd/8W-5L/−$11.50. Check: −26.43−11.50=−37.93 ≈
+−37.94 (rounding) ✓. **Gap:** the last hand totals (2026-09-28 04:15Z) were
+25 rows / −$22.48. Six WSV rows that settled since were never tabled here.
+Backfill is owed at the next deep retro, alongside the outside-view-veto
+reconcile gap. Ruling: no boundary change. Fillable WSV P&L stays negative.
+Touch-estimate note: a blend branch that hinges on reading the resolution
+rules (does the 18:00 ET reopen count as September?) gets resolved from
+the market description, not given a probability weight. Full grading in
+RETRO-20260930-2345.
