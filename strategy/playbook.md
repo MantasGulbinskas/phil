@@ -7241,3 +7241,26 @@ bracket, with lambda's inputs quoted. Re-grade after 3 independent monthly
 events; promotion past forecast-only needs own-closer on a majority of
 events AND positive counterfactual P&L. The veto ruling on this family is
 unchanged until then — one +$10.15 miss is variance-sized.
+
+## 2026-10-01 12:5xZ update: Accenture earnings-beat settles (1 `outside-view-veto`)
+
+1 forecast row settled, own-closer by market, not by estimate — RETRO-20261001-1253.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Accenture ACN beat Q4 earnings (`c1994675a368`, outside-view-veto) | 0.72 / 0.895 | No | +0.170 | Yes | **-5.00** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 191 settled, 183 fillable, 8 refused, 77W/106L, pnl
++$122.95, dBrier +0.0309, held-out +$127.06. Side split: no 133
+rows/125 trd/58W-67L/+$98.60; yes 58 rows/58 trd/19W-39L/+$24.35. Check:
+98.60 + 24.35 = 122.95 ✓; delta from 08:5xZ (+$127.95) is -5.00,
+matching the table ✓. Earnings category slice: 2 rows, 0W/2L, -$10.00
+(this row plus HD `65aea7cd91f4`).
+
+Ruling: no boundary change — `outside-view-veto` already covers this
+case (full-stake loss avoided). The earnings-beat self-model is now
+0-for-2 under the veto (HD, ACN): both times the self-model read
+downside the market priced out correctly. Not enough n for a dedicated
+carve-out rule either way; keep routing earnings-beat edge >0.10 claims
+through `outside-view-veto` as already specified.
