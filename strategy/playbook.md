@@ -7214,3 +7214,30 @@ the OTHER outcome, record the new read in that row's frame (convert:
 P(No) = 1 - P(Yes)) with `--supersede`. Never open a second live row on a
 binary market.** Guard fix proposed to the operator in
 `journal/proposals.md`.
+
+## 2026-10-01 08:5xZ update: NK September count family settles (1 `outside-view-veto`)
+
+3 forecast rows settled, all final, own closer on all 3 (RETRO-20261001-0850).
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| NK exactly 2 launch days Sep (`71aef6acf4eb`, outside-view-veto) | 0.47 / 0.32 | Yes | +0.140 | Yes | **+10.15** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 190 settled, 182 fillable, 77W/105L, pnl +$127.95,
+dBrier +0.0307, held-out +$127.05. Side split: no 132 rows/124 trd/58W-66L/
++$103.60; yes 58 rows/58 trd/19W-39L/+$24.35. Check: 103.60 + 24.35 =
+127.95 ✓; delta from 06:2xZ (+$117.80) is +10.15, matching the table ✓.
+News OVV slice: 9 rows, 3W/6L, -$18.35.
+
+**Count-model tracker (pre-registered, 1 event so far).** The Poisson
+launch-day model (2026 base rate + recent cadence → lambda for the days
+left in the month) was recorded on three NK September brackets
+(`282abf3c48d3` 4+, `4bed9910b7de` exactly-3, `71aef6acf4eb` exactly-2).
+All three landed own-closer, but they are ONE draw on lambda: n=1 event.
+Rule: the next month-count market of this shape (NK launches, strikes,
+other discrete-event tallies) gets the same method recorded on EVERY
+bracket, with lambda's inputs quoted. Re-grade after 3 independent monthly
+events; promotion past forecast-only needs own-closer on a majority of
+events AND positive counterfactual P&L. The veto ruling on this family is
+unchanged until then — one +$10.15 miss is variance-sized.
