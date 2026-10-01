@@ -7125,3 +7125,45 @@ Touch-estimate note: a blend branch that hinges on reading the resolution
 rules (does the 18:00 ET reopen count as September?) gets resolved from
 the market description, not given a probability weight. Full grading in
 RETRO-20260930-2345.
+
+## 2026-10-01 04:4xZ update: September crypto touch ladder settles (27 forecast rows, all No)
+
+The September crypto month-end touch slate plus the NK 4-or-more launch-day
+row settled on the Oct 1 04:00Z cutoff. All 27 rows (18 final, 9
+superseded) resolved No: no barrier was touched. Everything was
+forecast-only (`unvalidated-method`, `no-edge`, `market-agrees`), so P&L
+is zero and no veto rows means no counterfactual-table duty. Full grading
+is in RETRO-20261001-0447.
+
+Measured-vol touch decisions (final rows only; three Sep 1 rows recorded on
+placeholder or very wide books, `a414e604b8e7`/`5b18255d4c4a`/
+`942876f92dd8`, are listed with no weight): own beat the mid on **9 of 14**.
+- Direction: own BELOW the market 9 times, closer all 9. Own ABOVE the
+  market 5 times (`56d8062ca224` BTC 90k, `6708943a5e32` SOL 130,
+  `6a8cdac19013` BTC dip 80k, `f29090ac1de8` BTC 87.5k, `040e38b8b4c3`
+  BTC dip 82.5k), market closer all 5. In an all-No month the lower read
+  wins mechanically, so the direction split is the outcome, not skill.
+- Far barrier (gap ≥10%): 6 of 6 own closer (`8468bf02b54f`,
+  `a377b2d59cda`, `3241bb33a57f`, `34fed635827f`, `dc88b4a74a34`,
+  `0e4224cafbbc`), so the jump-term worry from RETRO-20260921-2044 did not
+  show this month. Near barrier: 3 of 8.
+- Reach 5/8, dip 4/6.
+- Running counter: 4 of 9 at the 09-25 tally plus 9 of 14 here is 13 of
+  23 (57%), under criterion (b)'s 60%. Rows that settled between 09-25 and
+  09-30 may be missing from that sum, so the next deep retro reconciles the
+  counter. **Ruling unchanged: forecast-only.**
+
+**Short-window vol test (pre-registered, n=2 supporting so far).** Late
+September realized vol fell to about half the 30d figure (6d ~0.18-0.21 vs
+30d ~0.41-0.49 on BTC/ETH). Both rows that blended a 6d read into the 30d
+`touch.py` output came out closer than the plain 30d read would have:
+`f29090ac1de8` 0.36 vs 30d-only 0.486, and `01564feeaec3` 0.32 vs 0.418
+(both No). The near-barrier rows that sat above the market used 30d vol
+alone. From now on, every touch note quotes BOTH the 30d and a 7d measured
+realized vol. When 7d < 0.6 × 30d, est_prob is the mean of the two
+`touch.py` reads and the note says so. Otherwise it stays the unshaded 30d
+read. Re-grade at 6 settled rows recorded under this rule, comparing est
+against the 30d-only read in each note.
+
+NK `282abf3c48d3` (4-or-more launch days in Sep, own 0.18 vs mid ~0.246,
+Poisson count model) settled No: own closer, n=1 for the count model.
