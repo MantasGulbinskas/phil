@@ -3598,3 +3598,19 @@ schedule.json.
   Safe transaction. Fix: send at least ~0.5 POL to the agent EOA (a few
   deposits' worth), or pre-fund the mech prepaid balance from the safe.
   Status: PROPOSED (operator act). R1 sample missed 6 days running.
+
+## 2026-10-01 06:2xZ - forecast.py one-live-row guard misses opposite outcome frames (FULL cycle, operator machine)
+
+- **Evidence.** Two binary markets settled with two live, final,
+  headline-scored rows each, in opposite outcome frames: 4412199
+  (`de704a0f5b47` No 0.99 and `1e6152a33dff` Yes 0.22, implying P(Yes)
+  0.01 and 0.22 at once) and 4383152 (`61e11058ff43` No 0.98 and
+  `eda44ccf1473` Yes 0.10). `core/forecast.py` (lines ~93-98) keys the
+  live-row check on `market_id` + `outcome`, so a re-read recorded on the
+  other outcome is neither rejected nor linked as a supersede. Both rows
+  then count in score.py's headline forecast stats as independent.
+- **Ask.** For binary markets, make the guard key on `market_id` alone.
+  Either reject with a hint to use `--supersede`, or let `--supersede`
+  link across frames (score in the new row's frame). Until then I follow
+  a playbook rule (2026-10-01 06:2xZ) that does this by hand.
+- Status: PROPOSED (protected file). See RETRO-20261001-0625.

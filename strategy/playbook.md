@@ -7167,3 +7167,50 @@ against the 30d-only read in each note.
 
 NK `282abf3c48d3` (4-or-more launch days in Sep, own 0.18 vs mid ~0.246,
 Poisson count model) settled No: own closer, n=1 for the count model.
+
+## 2026-10-01 06:2xZ update: Sep30 by-date news/AI rows settle (4 `outside-view-veto`, 1 `wide-spread-veto`)
+
+17 forecast rows settled (11 final, 6 superseded). Own estimate closer on 9
+of 11 final rows, mostly below-market reads on non-events. Full grading is
+in RETRO-20261001-0625.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Saudi E-W restart (`a194b68a39cd`, outside-view-veto, superseded) | 0.85 / 0.67 | Yes | +0.170 | No | **-5.00** |
+| AI lab 2nd Millennium (`61e11058ff43`, outside-view-veto) | No 0.98 / 0.855 | No | +0.120 | No | **+0.81** |
+| OpenAI 2nd Millennium (`de704a0f5b47`, outside-view-veto) | No 0.99 / 0.875 | No | +0.110 | No | **+0.68** |
+| OpenAI 2nd Millennium (`1e6152a33dff`, outside-view-veto) | 0.22 / 0.115 | Yes | +0.100 | No | **-5.00** |
+| Machado enters Venezuela (`53ea2024db78`, wide-spread-veto) | 0.12 / 0.225 | No | +0.070 | No | **+1.17** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 189 settled, 181 fillable, 8 refused, 76W/105L, pnl
++$117.80, brier_delta +0.0318, held-out +$116.90. Side split: no 132
+rows/124 trades/58W-66L/+$103.60; yes 57 rows/57 trades/18W-39L/+$14.20.
+Check: 103.60 + 14.20 = 117.80 ✓, and the delta from 22:5xZ (+$126.30) is
+-8.50, matching the table's -8.51 to rounding ✓. News OVV slice: 8 rows,
+2W/6L, -$28.50. Both Yes-side news vetoes would have lost the full stake.
+
+Wide-spread-veto (`core/counterfactual.py ledger --skip-reason
+wide-spread-veto`): 34 settled, 29 fillable, 5 refused, 16W/13L, pnl
+-$36.76, dBrier -0.0046. Side split: no 19 rows/16 trd/8W-8L/-$25.26; yes
+15 rows/13 trd/8W-5L/-$11.50. Check: -25.26 - 11.50 = -36.76 ✓. The
+reconciliation and backfill gaps flagged at 22:0xZ and 23:4xZ stay open
+for the next deep retro.
+
+Ruling: no boundary change on either veto. The OVV news cell keeps losing
+on the Yes side, where a company "preparing to announce" was read as a
+timeline (`1e6152a33dff`) and a physical restart was read as a qualifying
+announcement (`a194b68a39cd`). That shape is already barred.
+
+**Opposite-frame supersede rule (new, evidence: 4412199 and 4383152).**
+Both Millennium markets carried two live, headline-scored rows in opposite
+outcome frames: `de704a0f5b47` No 0.99 next to `1e6152a33dff` Yes 0.22
+(implied P(Yes) 0.01 and 0.22 at once), and `61e11058ff43` No 0.98 next to
+`eda44ccf1473` Yes 0.10. `forecast.py` checks its one-live-row guard on
+market_id + outcome, so a re-read recorded on the other outcome neither
+gets rejected nor supersedes. **Before every `forecast.py record`, grep
+`journal/forecasts.jsonl` for the market_id. If a live open row exists on
+the OTHER outcome, record the new read in that row's frame (convert:
+P(No) = 1 - P(Yes)) with `--supersede`. Never open a second live row on a
+binary market.** Guard fix proposed to the operator in
+`journal/proposals.md`.
