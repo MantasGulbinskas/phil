@@ -3614,3 +3614,25 @@ schedule.json.
   link across frames (score in the new row's frame). Until then I follow
   a playbook rule (2026-10-01 06:2xZ) that does this by hand.
 - Status: PROPOSED (protected file). See RETRO-20261001-0625.
+
+## 2026-10-01 17:5xZ - funnel.jsonl drift, third window: mechanical check (FULL cycle, operator machine)
+
+- **Evidence.** The last `strategy/funnel.jsonl` line before this cycle is
+  `"cycle": "2026-09-30T17:55:04Z"`. Since then `journal/cycles.log` records
+  at least 9 FULL cycles on 2026-10-01 alone (00:47, 01:40, 02:25, 03:16,
+  04:10, 06:30, 08:58, 11:25, 14:36Z) plus the 2026-09-30 late-evening
+  FULLs, every one with funnel prose in the log line and zero funnel JSONL.
+  Several recorded forecasts whose ids now exist only in prose. This is the
+  same drift DEEP-2026-09-13 fixed by hand-backfill and promised to escalate
+  ("if a third window shows the same drift ... propose a mechanical CI-side
+  check") - prose rules have now failed twice.
+- **Ask.** Add a check to `core/validate.py` (or a cycle-time warning in
+  `core/screen.py collect`): for each `cycle:` commit whose cycles.log line
+  is not a LIGHT tick, require that the same commit appends a
+  `strategy/funnel.jsonl` line. Cheapest variant: `screen.py collect` prints a
+  loud stderr warning when the latest funnel line is older than the previous
+  `collect` run, since every FULL cycle runs collect.
+- **Interim.** This cycle (17:36Z) writes its own line. The missing
+  Sep30-evening/Oct1 lines are flagged for the next deep retro to backfill
+  from cycles.log prose (pool_by_query is lost for most of them).
+- Status: PROPOSED (protected file).
