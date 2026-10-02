@@ -7352,3 +7352,28 @@ flagged at 06:2xZ and 22:0xZ/23:4xZ (open for the next deep retro).
 Ruling: no boundary change at n=36 — the wide-spread-veto's refusal
 bucket keeps growing (now 6) with the fill-model arithmetic correctly
 declining dead/illiquid books regardless of directional accuracy.
+
+## 2026-10-02 22:4xZ update: one `outside-view-veto` refusal settled (Primetime opening-weekend box office)
+
+1 forecast row settled, LIGHT tick — RETRO-20261002-2326.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Primetime opening wknd $19-22m (`07bfb21eee33`, outside-view-veto) | 0.82 / 0.685 | Yes | +0.10 | No | **-1.00** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 194 settled, 186 fillable, 8 refused, 78W/108L, pnl
++$116.28, dBrier +0.0314, held-out +$120.39. The mechanical total moved by
+exactly this one row (193->194, +$121.28->+$116.28, -$5.00) — no
+reconciliation gap this time.
+
+Ruling: no boundary change. Own press-based estimate (0.82, centred on a
+~20.0M consensus with sd~1.0M) read the bracket narrower than the market
+(0.685) and the actual print landed outside the 19-22m band — this
+confirms rather than challenges the standing box-office category-bar/
+outside-view-veto: the category's own sibling row in this same cycle
+(Primetime Rotten Tomatoes score, a different sub-type, no-edge skip) won,
+so the veto is correctly discriminating "mechanical count" sub-types
+(RT tomatometer, countable) from "press-estimate bracket" sub-types
+(opening weekend box office), where the market keeps beating the
+self-model.
