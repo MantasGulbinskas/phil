@@ -7264,3 +7264,32 @@ case (full-stake loss avoided). The earnings-beat self-model is now
 downside the market priced out correctly. Not enough n for a dedicated
 carve-out rule either way; keep routing earnings-beat edge >0.10 claims
 through `outside-view-veto` as already specified.
+
+## 2026-10-02 14:5xZ update: Sept jobs report settles (1 `outside-view-veto`)
+
+1 forecast row settled on the Sept NFP ladder, own closer by far —
+RETRO-20261002-1454.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| NFP add 100-150k (`e70eaa65e627`, outside-view-veto) | 0.29 / 0.415 | No | +0.110 | No | **+0.67** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 193 settled, 185 fillable, 8 refused, 78W/107L, pnl
++$121.28, dBrier +0.0305, held-out +$125.39. Side split: no 135
+rows/127 trd/59W-68L/+$96.93; yes 58 rows/58 trd/19W-39L/+$24.35. The
+mechanical total moved by 2 settled rows (191->193, -$1.67) rather than
+this batch's own +1 row/+$3.33 — a second outside-view-veto row settled
+somewhere between the 12:5xZ Accenture update and now without ever being
+entered here. Identifying and backfilling that row is owed at the next
+deep retro, alongside the existing outside-view-veto and wide-spread-veto
+reconciliation gaps already flagged above.
+
+Ruling: no boundary change. The declined No leg on the 100-150k bracket
+would have won (own 0.29 vs Polymarket mid 0.415, Kalshi KXPAYROLLS-26SEP
+implying ~0.29-0.33 — the gate's own-modeled dispersion input was
+unsourced, so gate-2 still correctly declines this shape even though this
+particular leg paid). The sibling econ-jobs brackets on the same print
+(six of seven, all forecast-only) lost, consistent with actual NFP landing
+in the 0-50k bucket — the veto avoided a losing environment in aggregate
+even though this one leg was a miss.
