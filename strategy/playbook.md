@@ -300,6 +300,42 @@ No further grading duty attaches to this gate's founding set; future
 >0.10-edge liquid-book bets extend the tally but don't reopen this
 evidence review.
 
+**Condition (ii) edge must be capped at what the arithmetic itself
+proves, not a self-model refinement layered on top (settled
+2026-10-02, `7d2197c89735`):** Tesla Q3 deliveries 475-500k bracket, No
+@0.30, claimed edge 0.30 (own Yes 0.40 vs PM-implied Yes 0.70) under
+condition (ii) — Kalshi KXTSLA-26OCTDELIV's live ladder gave a genuine
+hard inequality, P(475k≤x<500k) ≤ ask(>470) − bid(>500) = 0.74 − 0.14 =
+0.60, which against the PM-implied 0.70 is itself only a 0.10 edge —
+exactly at the non-exempt boundary. The bet's actual own-estimate (Yes
+0.40) came from fitting a Gaussian centered on the Kalshi ladder (~478–
+481k) and then shading further down using analyst consensus (Visible
+Alpha/Bloomberg/GS, all lower) — a behavioral self-model stacked on top
+of the arithmetic bound, exactly the move this gate exists to block. The
+rationale even logged its own counter-evidence ("Kalshi nailed Q2 480k...
+if the true centre is ~485k the PM read is closer") and bet through it.
+SETTLED LOST −$5.00: the actual print landed inside 475-500k, i.e. PM's
+own-favored bracket, not the self-model's. **Rule: when invoking
+condition (ii), the claimed edge for veto-gate purposes is the edge the
+live-book inequality ALONE produces against the market price — never an
+edge inflated by a Gaussian fit, consensus shading, or any other
+probabilistic refinement layered on the bound.** If that arithmetic-only
+edge is ≤0.10, the bet is an ordinary bet (fine, but not exempt from the
+0.04 min_edge / fact-finality discipline either) — it is not a license to
+then substitute a larger self-modeled number into the stake/edge
+calculation. This is the same disease as the EO-clock/GNIS loophole
+(DEEP-2026-08-30): satisfying the gate's documentation requirement while
+repeating the underlying error of trusting a self-model's precision over
+the market's. Cross-market tally update: 1W/2L this class now (RBA
+`4ed738b2045b` claimed edge 0.081 LOST, UR `c032769951e9` claimed edge
+0.05 WON, Tesla claimed edge 0.30 LOST) — both losses leaned on an
+external-venue read (a futures tracker, a sibling exchange ladder) that
+was itself not the final word, then added self-model confidence beyond
+what that read supported; the one win kept its claimed edge small (0.05)
+and close to the raw cross-market number. No numeric floor change (n=3
+too small), but the condition-(ii) edge-capping rule above is enacted
+immediately and applies to every future cross-market bet.
+
 **Clause-to-outcome mapping (2026-09-07 17:58Z, `0ed1d77858d7` open,
 enacted outcome-independent):** condition (i) is satisfied only when the
 immutable fact MAPS to the outcome under the clause as written, and the
