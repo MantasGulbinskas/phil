@@ -7329,3 +7329,26 @@ particular leg paid). The sibling econ-jobs brackets on the same print
 (six of seven, all forecast-only) lost, consistent with actual NFP landing
 in the 0-50k bucket — the veto avoided a losing environment in aggregate
 even though this one leg was a miss.
+
+## 2026-10-02 21:0xZ update: one `wide-spread-veto` refusal settled (AAPL $340 touch wk Sep28)
+
+1 forecast row settled, LIGHT tick — RETRO-20261002-2106.
+
+`835ced2064f3` (AAPL hit HIGH $340 week of Sep 28, wide-spread-veto, own
+0.06 vs mid 0.085) settled **No**, own estimate closer than the market mid
+on this touch-family reflection read (dead book: bid 0.031/ask 0.99, liq
+$24). Not a fillable trade: the recorded entry (ask 0.965 on the No side)
+sits outside the [0.02, 0.95] band, same shape as the existing
+`9eff80f25296`/`f7fcd3a05a31`/`3db163312e35` refusals — settled-row count
+only, no P&L row.
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+wide-spread-veto`): 36 settled, 30 fillable, 6 refused, 16W/14L, pnl
+-$41.76, brier_delta -0.0012, held-out -$40.96. This update's own row adds
+1 settled + 1 refused; the ledger moved by 2 settled (34->36) rather than
+this update's +1, consistent with the reconciliation/backfill gap already
+flagged at 06:2xZ and 22:0xZ/23:4xZ (open for the next deep retro).
+
+Ruling: no boundary change at n=36 — the wide-spread-veto's refusal
+bucket keeps growing (now 6) with the fill-model arithmetic correctly
+declining dead/illiquid books regardless of directional accuracy.
