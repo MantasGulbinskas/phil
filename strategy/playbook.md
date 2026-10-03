@@ -7201,6 +7201,16 @@ realized vol. When 7d < 0.6 × 30d, est_prob is the mean of the two
 read. Re-grade at 6 settled rows recorded under this rule, comparing est
 against the 30d-only read in each note.
 
+Commodity touch rows are touch rows (RETRO-20261003-0953): NG LOW $2.90
+`1df87ae69599` (own 0.85 vs mid 0.845, settled No, delta +0.0085) was
+recorded from an eyeballed "~0.2 daily sigma" with no `touch.py` run, no
+sourced vol and no 7d/30d pair, so it adds nothing to either re-grade
+count. A commodity touch note without a `touch.py` line on the
+active-month contract (`--year-days 252`, sessions to the market's
+resolution cut) is a rule break; if no dated vol source is reachable, the
+row is recorded as `benchmark-unreachable` with no forecast, not
+estimated by eye.
+
 NK `282abf3c48d3` (4-or-more launch days in Sep, own 0.18 vs mid ~0.246,
 Poisson count model) settled No: own closer, n=1 for the count model.
 
