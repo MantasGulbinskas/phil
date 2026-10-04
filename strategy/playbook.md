@@ -7387,3 +7387,23 @@ so the veto is correctly discriminating "mechanical count" sub-types
 (RT tomatometer, countable) from "press-estimate bracket" sub-types
 (opening weekend box office), where the market keeps beating the
 self-model.
+
+## 2026-10-04 01:3xZ update: Trump-Milei September meeting settles (1 `outside-view-veto`)
+
+1 forecast row settled, market closer — RETRO-20261004-0130.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Trump meets Milei in Sept (`eed9ab11f3d6`, outside-view-veto) | 0.62 / 0.775 | No | +0.150 | Yes | **-5.00** |
+
+Mechanical ledger (`core/counterfactual.py ledger --skip-reason
+outside-view-veto`): 195 settled, 187 fillable, 8 refused, 78W/109L, pnl
++$111.28, dBrier +0.0317, held-out +$115.39. Side split: no 136
+rows/128 trd/59W-69L/+$91.93; yes 59 rows/59 trd/19W-40L/+$19.35. Check:
+91.93 + 19.35 = 111.28 ✓; delta from 22:4xZ (+$116.28) is -5.00, matching
+the table ✓.
+
+Ruling: no boundary change. Interpretive "meet / interact in person"
+resolution read literally by me (UN wave + speech nod judged insufficient)
+against a 0.775 market that priced the resolver's lenient reading; the veto
+avoided the full-stake loss, which is its purpose on this shape.
