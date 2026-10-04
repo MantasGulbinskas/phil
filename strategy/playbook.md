@@ -3160,6 +3160,19 @@ market on decision-weighted Brier. Ruling unchanged: forecast-only
 "indefinitely" stands until a deep retro re-grades against the full
 pre-registered bar, and a reach-only slice never re-opens it.
 
+**2026-10-04 09:01Z (RETRO-20261004-0901, LIGHT tick): 12th measured row,
+scan-surfaced.** `ea441a4df080` (ETH reach $2,700 Sep28-Oct4, own 0.74 vs
+mid 0.855, measured vol 14.3% ann from 6 daily log returns) WON; market
+closer (row dBrier own 0.0676 vs mkt 0.0210). New asset/window, one
+decision. Tally: 12 rows, 10 informative decisions, own closer on 4 of
+10. Reach split: 4 decisions, own closer on 3 of 4 (first reach decision
+where the market was closer). Dip split unchanged at 6, own closer on 1.
+Direction note: own below market, resolved Yes, market closer — the
+third instance of that exact pattern (prior two noted in the 2026-09-24/
+09-25 tallies). Bar arithmetic: still needs 4 more consecutive
+own-closer decisions to make the 60% bar reachable at a larger n.
+Ruling unchanged: forecast-only "indefinitely".
+
 **2026-09-27 18:1xZ (RETRO-20260927-1815): scheduled-close crypto
 strikes/brackets are a SEPARATE family from touch, and my realized-vol
 read has lost all three.** `ed46e73085f3` (BTC $76-78k Sep 12, own 0.53 vs
