@@ -1880,6 +1880,13 @@ move as favorable or adverse.
    (anchoring guard). Write the estimate down in the rationale.
 3. Identify the sharpest external benchmark (bookmaker odds, analyst
    consensus, base rates) and reconcile.
+   - **Exit polls with a known house bias (RETRO-20261004-1123):** when a
+     pollster's prior-cycle exit-poll error is known, the bias-corrected
+     figure IS the point estimate, not the midpoint of raw and corrected,
+     and the prior bias is a floor on its size. Evidence: SKDS overstated
+     Latvia's PRO +2.1pt in 2022 and ~+4.5pt in 2026; forecast b0c00c8f309b
+     corrected to ~0.10 but recorded 0.15 and PRO finished 5th. n=2
+     elections, one pollster: a heuristic, not a gate.
    - **Cross-venue divergence (added DEEP-2026-08-05, corrected 2026-08-05
      ~13:30Z after the operator's egress allowlist update):** a real-money
      venue pricing the same event (Kalshi, CME FedWatch for Fed decisions) is
