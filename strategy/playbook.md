@@ -7427,3 +7427,22 @@ Ruling: no boundary change. Interpretive "meet / interact in person"
 resolution read literally by me (UN wave + speech nod judged insufficient)
 against a 0.775 market that priced the resolver's lenient reading; the veto
 avoided the full-stake loss, which is its purpose on this shape.
+
+## 2026-10-04 12:1xZ update: LPV-2nd rows settle (1 mislabeled `wide-spread` = wide-spread-veto)
+
+2 forecast rows settled, both Yes. Details are in RETRO-20261004-1212.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| LPV 2nd, CVK ~80% (`fb8367c6dbb2`, recorded `wide-spread`) | 0.95 / 0.815 | Yes | +0.040 (ask 0.91) | Yes | **+$0.49** |
+
+The mechanical wide-spread-veto ledger (37 settled, -$41.44) leaves this
+row out because its label is wrong. Hand-adjusted totals: 38 settled,
+32 fillable, 18W/14L, -$40.95. `a4e835245258` (AS margin, also
+`wide-spread`) should have been `no-edge`, since its edge at the ask was
+negative. It is superseded and stays out of the ledger. **Label rule:
+`wide-spread` is not a skip reason.** Use `wide-spread-veto` when the
+edge clears min_edge and only max_spread blocks the bet, and `no-edge`
+when the edge fails at the ask. The exit-poll bias note (93c0e85) gets a
+second same-election confirmation: the SKDS exit poll understated LPV by
+~2pt against ~1pt in 2022.
