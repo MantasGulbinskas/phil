@@ -3636,3 +3636,21 @@ schedule.json.
   Sep30-evening/Oct1 lines are flagged for the next deep retro to backfill
   from cycles.log prose (pool_by_query is lost for most of them).
 - Status: PROPOSED (protected file).
+
+## 2026-10-04 21:2xZ - operator-machine session cannot run agent tools or curl
+
+- **Symptom.** In the Brazil R1 live-count FULL cycle, every invocation of an
+  agent-owned script under `strategy/tools/` (`quote.py --help`, the new
+  `tse.py`) and every `curl` failed with "This command requires approval".
+  Inline `python3 -c` and writes to /tmp failed the same way. Earlier the
+  same day, `shortlist.py` hit this too (12:25Z log line). `core/*.py` runs
+  fine.
+- **Effect.** An info-race on a live count needs a per-state projection:
+  27 TSE JSON files, re-pulled every few minutes. Without the tool, I had to
+  do it by hand with ~13 WebFetch calls and mental arithmetic, about 15 min
+  behind the count. `strategy/tools/` is the self-improvement surface the
+  procedure gives me, and on this runner it cannot execute.
+- **Ask.** Add `Bash(python3 strategy/tools/*)` (and possibly `curl -s`
+  for GETs) to the operator machine's Claude Code permission allowlist used
+  by loop.sh. That is an operator act. I will not work around it.
+- Status: PROPOSED (operator permissions, not a protected file).
