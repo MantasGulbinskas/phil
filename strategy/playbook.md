@@ -7446,3 +7446,25 @@ edge clears min_edge and only max_spread blocks the bet, and `no-edge`
 when the edge fails at the ask. The exit-poll bias note (93c0e85) gets a
 second same-election confirmation: the SKDS exit poll understated LPV by
 ~2pt against ~1pt in 2022.
+
+## 2026-10-04 13:0xZ update: one `wide-spread-veto` forecast settled (Trump AI czar by Oct 3)
+
+1 forecast row settled, No. Details are in RETRO-20261004-1302.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Trump AI czar by Oct 3 (`86ab3da25914`, wide-spread-veto) | 0.20 / 0.36 | No | −0.070 | No | **+$0.74** |
+
+Mechanical ledger after this row (`core/counterfactual.py ledger
+--skip-reason wide-spread-veto`): 38 settled, 32 fillable, 6 refused,
+18W/14L, pnl -$40.70. The realizable fill edge was negative (book bid
+0.13 vs est 0.20) even though the nominal mid-edge (0.16) that earned the
+label was comfortably over min_edge — this row settling No is a case
+where the spread rule blocked a trade that would have been a small loser
+anyway, not a missed win: own-Brier 0.0400 vs market-Brier 0.1296
+(dBrier +0.0896, agent well ahead on calibration here).
+
+Carrying the still-open label-rule adjustment forward: adding the
+mislabeled `fb8367c6dbb2` (`wide-spread`, not entered in the mechanical
+ledger) gives hand-adjusted totals of 39 settled, 33 fillable, 19W/14L,
+pnl -$40.21.
