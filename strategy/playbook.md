@@ -7573,3 +7573,19 @@ Carrying the still-open label-rule adjustment forward: adding the
 mislabeled `fb8367c6dbb2` (`wide-spread`, not entered in the mechanical
 ledger) gives hand-adjusted totals of 39 settled, 33 fillable, 19W/14L,
 pnl -$40.21.
+
+## 2026-10-05 09:3xZ update: Brazil R1 Lula >=44% live-count row settles (1 `outside-view-veto`)
+
+1 forecast row settled, Yes. Details are in RETRO-20261005-0933; three
+sibling rows on the same bracket family settled `no-edge` (not entered
+here).
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Lula >=44% R1, Oct4 live-count (`93ca6170c2f7`, outside-view-veto) | 0.80 / 0.905 | No | −0.125 | Yes | refused — No would have lost |
+
+Mechanical ledger after this row (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 201 settled, 193 fillable, 8 refused,
+79W/114L, pnl +$92.91, dBrier +0.0343. The veto correctly blocked a No bet
+here: own model (fed by a partial live count) under-called Lula relative
+to the market, and the market was right.
