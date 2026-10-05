@@ -1,0 +1,153 @@
+- main [ref=f1e2]:
+  - generic [ref=f1e3]:
+    - heading "Assay · research notebook" [level=1] [ref=f1e4]
+    - generic [ref=f1e5]: Updated 2026-10-05 10:18 UTC · paper research only, no money is traded
+  - paragraph [ref=f1e6]:
+    - text: Assay reads published trading research, re-tests each idea on data from
+    - emphasis [ref=f1e7]: after
+    - text: "it was published, after trading costs, and keeps only what holds up. So far it has tested 3 ideas: 1 weaker now, 2 costs eat it. A control test that should pass, and does, shows the judge can say yes."
+  - generic [ref=f1e8]:
+    - generic [ref=f1e9]:
+      - generic [ref=f1e10]: "3"
+      - text: ideas tested
+    - generic [ref=f1e11]:
+      - generic [ref=f1e12]: "0"
+      - text: still hold up
+    - generic [ref=f1e13]:
+      - generic [ref=f1e14]: "0"
+      - text: lessons confirmed (2 being checked)
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: "33"
+      - text: questions waiting
+  - paragraph [ref=f1e17]:
+    - text: "Last cycle 2026-10-05 10:00:"
+    - strong [ref=f1e18]: "Paused: daily limit reached"
+    - text: . not enough AI sessions left today for a full cycle
+  - heading "Results" [level=2] [ref=f1e19]
+  - table [ref=f1e20]:
+    - rowgroup [ref=f1e21]:
+      - row [ref=f1e22]:
+        - columnheader "Tested" [ref=f1e23]
+        - columnheader "Idea" [ref=f1e24]
+        - columnheader "Verdict" [ref=f1e25]
+        - columnheader "Paper's own period" [ref=f1e26]
+        - columnheader "After publication, before → after costs" [ref=f1e27]
+        - columnheader "Predicted chance" [ref=f1e28]
+    - rowgroup [ref=f1e29]:
+      - row [ref=f1e30]:
+        - cell "2026-10-05" [ref=f1e31]
+        - 'cell "Positive control: the US equity premium, holding stocks rather than T-bills (Fama & French 2002) The Equity Premium (2002) · same rule on equivalent data" [ref=f1e32]':
+          - text: "Positive control: the US equity premium, holding stocks rather than T-bills (Fama & French 2002)The Equity Premium (2002) · same rule on equivalent data"
+          - group [ref=f1e33]:
+            - generic "why" [ref=f1e34] [cursor=pointer]
+        - 'cell "Holds up control: checks the judge can say yes" [ref=f1e35]': "Holds upcontrol: checks the judge can say yes"
+        - cell "+7.8%" [ref=f1e36]
+        - cell "+9.7% → +9.7%" [ref=f1e37]
+        - cell "–" [ref=f1e38]
+      - row [ref=f1e39]:
+        - cell "2026-10-05" [ref=f1e40]
+        - 'cell "Profitability premium: profitable firms beat unprofitable firms (Novy-Marx 2010), tested with Fama-French RMW The Other Side of Value: Good Growth and the Gross Profitability Premium (2010) · tested with a stand-in, not the paper''s exact portfolio" [ref=f1e41]':
+          - text: "Profitability premium: profitable firms beat unprofitable firms (Novy-Marx 2010), tested with Fama-French RMWThe Other Side of Value: Good Growth and the Gross Profitability Premium (2010) · tested with a stand-in, not the paper's exact portfolio"
+          - group [ref=f1e42]:
+            - generic "why" [ref=f1e43] [cursor=pointer]
+        - cell "Weaker now" [ref=f1e44]
+        - cell "+3.4%" [ref=f1e45]
+        - cell "+2.0% → +0.8%" [ref=f1e46]
+        - cell "30%" [ref=f1e47]
+      - row [ref=f1e48]:
+        - cell "2026-10-05" [ref=f1e49]
+        - 'cell "Momentum: buying past winners and selling past losers (Jegadeesh & Titman 1993) Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency (1993) · tested with a stand-in, not the paper''s exact portfolio" [ref=f1e50]':
+          - text: "Momentum: buying past winners and selling past losers (Jegadeesh & Titman 1993)Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency (1993) · tested with a stand-in, not the paper's exact portfolio"
+          - group [ref=f1e51]:
+            - generic "why" [ref=f1e52] [cursor=pointer]
+        - cell "Costs eat it" [ref=f1e53]
+        - cell "+9.9%" [ref=f1e54]
+        - cell "+4.5% → -1.5%" [ref=f1e55]
+        - cell "–" [ref=f1e56]
+      - row [ref=f1e57]:
+        - cell "2026-10-05" [ref=f1e58]
+        - 'cell "Short-term reversal: last month''s losers beat last month''s winners (Jegadeesh 1990) Evidence of Predictable Behavior of Security Returns (1990) · tested with a stand-in, not the paper''s exact portfolio" [ref=f1e59]':
+          - text: "Short-term reversal: last month's losers beat last month's winners (Jegadeesh 1990)Evidence of Predictable Behavior of Security Returns (1990) · tested with a stand-in, not the paper's exact portfolio"
+          - group [ref=f1e60]:
+            - generic "why" [ref=f1e61] [cursor=pointer]
+        - cell "Costs eat it" [ref=f1e62]
+        - cell "+11.6%" [ref=f1e63]
+        - cell "+1.6% → -4.4%" [ref=f1e64]
+        - cell "–" [ref=f1e65]
+  - paragraph [ref=f1e66]: Returns are per year. "Holds up" needs the result to beat luck across every test Assay has ever run, so a verdict can change as the library grows. Trading-cost levels are Assay's own assumptions.
+  - heading "What it has learned" [level=2] [ref=f1e67]
+  - list [ref=f1e68]:
+    - listitem [ref=f1e69]: "Published US equity factor premia shrink substantially after publication, with the post-publication Sharpe falling to a fraction of the in-sample level. (waiting for confirmation: confirmed by 0 later tests)"
+    - listitem [ref=f1e70]: "Published long-short equity factor premia that persist after publication usually have too little left after trading costs to be clearly distinguishable from luck. (waiting for confirmation: confirmed by 0 later tests)"
+  - paragraph [ref=f1e71]: A lesson is proposed from one result and counts only after later, independent tests confirm it.
+  - heading "Ideas it could not test yet" [level=2] [ref=f1e72]
+  - paragraph [ref=f1e73]: Papers whose claim needs something Assay's strategy language cannot express yet. They show where to extend it next.
+  - list [ref=f1e74]:
+    - listitem [ref=f1e75]:
+      - strong [ref=f1e76]: Volatility Managed Portfolios (2016)
+      - text: ": An exact test needs three things Assay lacks. (1) A weight of c / RV^2_{t-1}, where RV^2 is the variance of the previous calendar month's daily mkt_rf returns, applied to the next month's return, with no cap (or with the paper's 1 / 1.5 caps as variants)."
+    - listitem [ref=f1e77]:
+      - strong [ref=f1e78]: Volatility Managed Portfolios (2016)
+      - text: ": The verifier's objections are valid and the vocabulary offers no faithful repair. 1. Trading rule. The paper's main strategy weights next month's market excess return by c / (previous month's realized variance), with variance from about 22 daily returns and no leverage cap …"
+    - listitem [ref=f1e79]:
+      - strong [ref=f1e80]: "The Other Side of Value: Good Growth and the Gross Profitability Premium (2010)"
+      - text: ": An exact replication needs a value-weighted quintile sort of CRSP/Compustat non-financial stocks on gross profits-to-assets ((REVT - COGS)/AT), using NYSE breakpoints and rebalancing each June."
+  - heading "How good is its judgement" [level=2] [ref=f1e81]
+  - list [ref=f1e82]:
+    - listitem [ref=f1e83]: Before each test it predicts the chance the idea holds up. Over 1 test its forecast error (Brier score) is 0.09; always guessing 50% would score 0.25 (lower is better). Too few forecasts to judge its skill yet (needs 10).
+    - listitem [ref=f1e84]: The checker (gpt-6-astra) caught 1 of 1 deliberately planted mistakes.
+    - listitem [ref=f1e85]: "Paper readings by the AI: 1 confirmed by a second AI from another company, 1 rejected by the checks, 0 parked as unclear."
+    - listitem [ref=f1e86]: 3 classic results were set up by the operator to check the judge itself.
+  - heading "What's next" [level=2] [ref=f1e87]
+  - list [ref=f1e88]:
+    - listitem [ref=f1e89]: Does long-term reversal (three-to-five-year losers beating winners) survive after it was published?
+    - listitem [ref=f1e90]: Does the size premium (small stocks beating large stocks) survive after it was published?
+    - listitem [ref=f1e91]: Does the investment premium (conservative firms beating aggressive investors) survive after it was published?
+    - listitem [ref=f1e92]: Does the value premium survive after publication, using an NBER-hosted paper such as Fama-French or Lakonishok-Shleifer-Vishny 'Contrarian Investment, Extrapolation, and Risk' (NBER w4360)?
+    - listitem [ref=f1e93]: Does the investment premium (CMA) survive after publication, sourced from Hou-Xue-Zhang 'Digesting Anomalies' (open NBER version w18435)?
+    - listitem [ref=f1e94]: Is the post-2010 profitability premium concentrated in a few extreme months, and does it hold up when those months are excluded or the sample is split by sub-period?
+    - listitem [ref=f1e95]: Do other quality-type factors (e.g. Fama-French CMA investment, or low-volatility) show the same post-publication decay as profitability?
+    - listitem [ref=f1e96]: Does factor momentum (timing factors on their own past returns) survive after it was published?
+  - heading "Recent cycles" [level=2] [ref=f1e97]
+  - table [ref=f1e98]:
+    - rowgroup [ref=f1e99]:
+      - row [ref=f1e100]:
+        - columnheader "When" [ref=f1e101]
+        - columnheader "Outcome" [ref=f1e102]
+        - columnheader "Details" [ref=f1e103]
+    - rowgroup [ref=f1e104]:
+      - row [ref=f1e105]:
+        - cell "2026-10-05 10:00" [ref=f1e106]
+        - 'cell "Paused: daily limit reached" [ref=f1e107]'
+        - cell "not enough AI sessions left today for a full cycle" [ref=f1e108]
+      - row [ref=f1e109]:
+        - cell "2026-10-05 09:56" [ref=f1e110]
+        - cell "Reading rejected" [ref=f1e111]
+        - 'cell "the claim cannot be tested faithfully: The verifier''s objections are valid and the vocabulary offers no faithful repair. 1. Trading rule. The paper''s main strategy weights next month''s market excess return by c / (previous month''s realized variance), with variance from about 22 daily returns and no leverage cap …" [ref=f1e112]'
+      - row [ref=f1e113]:
+        - cell "2026-10-05 09:55" [ref=f1e114]
+        - cell "Nothing testable in the papers found" [ref=f1e115]
+        - 'cell "no candidate is testable with the current vocabulary (paper_1.txt: Its headline claim is about how intraday realized volatility changed after the CME/CBOE bitcoin futures launch (measured with 1-minute data and Fourier analysis), not a return-predicting trading rule, so no strategy exists to express.;" [ref=f1e116]'
+      - row [ref=f1e117]:
+        - cell "2026-10-05 09:44" [ref=f1e118]
+        - cell "Tested an idea" [ref=f1e119]
+        - 'cell "We tested whether the profitability premium (profitable companies beating unprofitable ones, from a 2010 paper) kept working after the paper came out. We used the Fama-French profitability factor as a stand-in. On the paper''s own period it replicated: about 3.4% a year, and unlikely to be chance on its own." [ref=f1e120]'
+      - row [ref=f1e121]:
+        - cell "2026-10-05 09:40" [ref=f1e122]
+        - cell "Found no readable paper" [ref=f1e123]
+        - cell "no candidate's open-access full text could be downloaded" [ref=f1e124]
+  - heading "Latest weekly review" [level=2] [ref=f1e125]
+  - paragraph [ref=f1e126]: "2026-10-05: two independent critics (Claude and OpenAI) reviewed the lessons, the agenda and the methods. Assay has run three tests, all on pre-built Fama-French factors standing in for the original papers, and all three failed or weakened after publication. The two lessons it wrote are plausible but were both drawn from the single profitability test, and one describes a Sharpe decline that was never measured. Keep them as candidates, link the momentum and reversal tests to them, and do not promote them yet."
+  - list [ref=f1e127]:
+    - listitem [ref=f1e128]: "Changes both agreed on: dropped agenda item q_110c32978c3c; dropped agenda item q_fb63735ec2a3; dropped agenda item q_facbaa3c4131; dropped agenda item q_cad72e589515."
+    - listitem [ref=f1e129]: "Concern (high): Trading costs applied to Fama-French factor return series: Two of three grades (momentum, reversal: dies_to_costs) are decided entirely by Assay's medium cost level. A factor return series has no observable turnover, so the cost drag must come from an assumed turnover times an assumed per-trade cost. For momentum the implied drag is about 6%/yr (4.5% before costs to -1.5% after), which is at the high end of published estimates for the UMD-type factor. Reversal would die under almost any assumption, but momentum's grade could flip to 'weakened' under a different plausible cost. The library should record the turnover and per-trade cost actually used, and at least one test should use costs measured in a paper rather than assumed."
+    - listitem [ref=f1e130]: "Concern (medium): Fidelity is unlabelled on every test, and Rule 1 'reproduce first' is near-tautological for factor data: All three tests use pre-built Fama-French factors as stand-ins for the papers' strategies (RMW for gross profitability; the FF mom and ST_Rev series for JT 1993 and Jegadeesh 1990). Checking that a published factor made money in its own published sample does not test Assay's implementation; it tests Ken French's. These should be labelled proxy fidelity so that lessons built on them are weighted accordingly."
+    - listitem [ref=f1e131]: "Concern (medium): Lesson creation from a single test: Both lessons were minted from one weakened, proxy-fidelity test, and one of them describes a Sharpe-ratio decline when only annual returns and t-stats were recorded. Meanwhile the two dies_to_costs tests in the library are linked to no lesson at all. The lesson writer appears to generalise from the most recent test rather than from the library. A minimum of two linked tests before a candidate lesson is written would prevent this."
+    - listitem [ref=f1e132]: "Concern (medium): Vocabulary gap exposed by the Moreira & Muir rejection: The verifier rejected the test because the only scaling tool is vol_target_annual (1/sigma) with no inverse-variance (1/sigma^2) option and no leverage cap. Several queued items (volatility-managed factors, volatility targeting on bitcoin) will hit the same wall. Either the vocabulary gains a weight-cap parameter or those items should be re-specified to the capped vol-target variants the papers themselves report."
+    - listitem [ref=f1e133]: "Concern (high): test_d9ae70031a5c and fidelity reporting: All three tests have unlabelled fidelity. The profitability test explicitly substitutes Fama-French RMW for Novy-Marx's gross-profitability strategy. Passing an in-sample return threshold does not validate that substitution. Record this as proxy evidence and audit the other two constructions before treating their grades as paper replications."
+    - listitem [ref=f1e134]: "Concern (high): Trading-cost assumptions in all three tests: The reported gross-to-net annual drags are 1.2 percentage points for profitability and 6.0 points each for momentum and reversal. Costs determine two grades, yet these summaries provide no turnover, per-trade rates, or implementation assumptions. The identical momentum and reversal drags warrant checking; they are not themselves evidence of an error."
+  - heading "Health" [level=2] [ref=f1e135]
+  - list [ref=f1e136]:
+    - listitem [ref=f1e137]: "AI sessions in the last 24 hours: Claude 12 of 12, Codex 6 of 12."
+    - listitem [ref=f1e138]: "Data sources at the last check (2026-10-05 09:55): 7 of 7 reachable."
+  - generic [ref=f1e139]: "Rulebook version 3 (fd72b88a99dea5f1) · Every hypothesis is registered in git before it is tested · Kill switch: create a file named STOP in the project folder."
