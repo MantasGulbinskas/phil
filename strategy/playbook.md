@@ -4756,6 +4756,26 @@ exactly on the veto line. That is n=1 and does not argue for loosening.
 `reconcile` B still lists 21 older unentered rows. They are already in
 the totals, and this tick does not backfill them.
 
+**2026-10-05 07:4xZ update (FULL cycle, operator machine; Brazil R1
+family: 1 `outside-view-veto` row settled this tick. See
+RETRO-20261005-0745.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Flavio 2nd in R1 (`22d7ab1cf2f3`) | 0.85 / 0.72 | Yes | +0.120 | No | -5.00 |
+
+Net this tick: **-$5.00** (0W/1L). Mechanical ledger after this row:
+200 rows / 192 trades / 79W-113L / +$97.91 / dBrier +0.0343 / held-out
++$107.01 (was 199/191/79W-112L/+$102.91). Side split: no
+139/131/60W-71L/+$88.56 (unchanged); yes 61/61/19W-42L/+$9.35 (adds
+22d7). Check: 88.56 + 9.35 = 97.91.
+
+Ruling: no boundary change. This row mirrors `b350adc7e95c` (Lula 2nd at
+0.15). It is the same margin sd 1.8 from house dispersion, read from the
+other side, so it is the fourth narrow-sd save in the family. The
+superseding row `59feffcbfcb5` (sd 4.5, own 0.75 vs mid 0.745) scored
+level with the market.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -6015,7 +6035,8 @@ No.** Official MV Linke share 6.5% against a six-poll mean of 10.17:
    that uses an sd under the default must cite settled rows that justify
    it. Poll agreement does not.
 3. **Consolidation squeezes the small parties on the leader's side
-   (keep counting, n=2 elections, not a bet rule yet).** MV 2026: the
+   (keep counting, n=3 elections with Brazil R1 2026, not a bet rule yet;
+   for sub-5% candidates see the Tenth data point, point 5).** MV 2026: the
    premier's SPD beat its polls by about 4 (derived from the polled
    5-point AfD lead closing to 2.7) while Linke (-3.7) and CDU (-4.1
    from the entry mean) under-ran theirs. Brandenburg 2024 had the same
@@ -6063,6 +6084,26 @@ about +3.5, and Lula landed on his (-0.4). Rulings:
    is 11 days out needs sd >= 5, because the drift until election day
    adds to the poll error. All three outside-view vetoes on the narrow
    rows were saves.
+5. **Rule 3 squeeze, third data point, and its size for sub-5% candidates
+   (RETRO-20261005-0745).** The three third-way candidates all under-ran
+   every final poll. TSE results: Cury 2.9, Renan Santos 2.25, Caiado 2.2
+   (combined 7.35). Final traditional polls had Cury 4, Caiado 3-4 and
+   Renan 3 (PoderData, Datafolha). The online panels had Renan at 5.2
+   (AtlasIntel) and 8 (Palver). That is 3 elections now (Brandenburg, MV,
+   Brazil) where the parties that could not finish first lost share to
+   the two-way fight. For a candidate polling under 5%, the 2-point-down
+   stress test is too blunt: it would put a 3% candidate near 1%. Use a
+   proportional cut instead: centre at about 0.7x the final traditional
+   poll mean. Realized/poll was 0.55-0.75 across the three. Renan's
+   brackets used centre 3.6 with sd 1.3, and that row (`6281bc2f82f5`,
+   4-6 at 0.33 vs mid 0.215) lost 0.063 to the mid. At 0.7x (centre 2.5)
+   the 4-6 bracket is about 0.13. Count it, not a bet rule (n=3
+   elections). **Online-panel note (n=1, count only):** AtlasIntel had
+   the best 2022 national record, and I weighted it up for the 3rd-place
+   race. It still overstated Renan, the digital-native candidate, by 2.9
+   points, and it understated Cury. A pollster's record on the top-two
+   margin says nothing about its minor-candidate shares, so do not carry
+   it over.
 
 ## Funnel pool_total: prose rule escalated to a mechanical check
 (DEEP-2026-08-24)
