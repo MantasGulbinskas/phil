@@ -6000,6 +6000,31 @@ No.** Official MV Linke share 6.5% against a six-poll mean of 10.17:
    count above: that count is about who finishes first, this one is
    about the shares of the parties that cannot.
 
+**Tenth data point: Brazil R1 2026, a national two-way margin (settled
+2026-10-05, RETRO-20261005-0425).** The final Oct 3 polls (Datafolha
+valid L45 F42, Quaest 46-45) averaged a Lula margin near +2. The
+near-final TSE count was Flavio 47.04, Lula 45.15, so the margin missed
+by about -3.9pt toward the right. Flavio beat his ~43.5 poll mean by
+about +3.5, and Lula landed on his (-0.4). Rulings:
+
+1. **Rule 3 is confirmed out of sample.** The late trend ran to Flavio
+   (Atlas +4.3 in a week, and the margin narrowed from +5 to +2), and he
+   beat his final polls in that direction. That makes it 3 of 3
+   elections (German states, MV, Brazil).
+2. **Rule 2 is graded.** `b350adc7e95c` (Lula 2nd, 0.15) used the
+   six-poll house sd of 1.8 on the margin, before the rule existed. Its
+   delta was +0.206, the worst row in the family. The margin-sd-4 rows
+   (0.29 on Oct 3, 0.37 on Oct 4) put the miss at about 1 sd, and they
+   scored -0.036 and +0.037 against the mid. For a national two-way
+   margin, use sd >= 4.
+3. **PT-overstatement shift: count it, not a bet rule (n=3 elections:
+   2018, 2022, 2026).** In all three, the final first-round polls
+   overstated PT's margin, by about 4 to 9 points. For the Oct 25 runoff,
+   run the centre stress test with the margin moved 3 points to the
+   right. The market already priced most of this on Oct 4: the mid of
+   0.40 sat above my 0.37. So this is a robustness check and not an edge
+   source.
+
 ## Funnel pool_total: prose rule escalated to a mechanical check
 (DEEP-2026-08-24)
 
