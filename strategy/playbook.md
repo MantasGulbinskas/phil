@@ -4730,6 +4730,32 @@ the outside-view pair is the textbook undated-count case the
 cumulative-count anchor rule exists for (the est rested on an inferred,
 not observed, pace).
 
+**2026-10-05 05:1xZ update (FULL cycle, operator machine; Brazil R1
+family: 3 `outside-view-veto` rows settled this tick, plus a backfill of
+`b350adc7e95c`, which settled at 04:46Z and was graded in
+RETRO-20261005-0425 without a table row. See RETRO-20261005-0515.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Lula R1 margin 5-10% (`7ae14fb4b36e`) | 0.35 / 0.12 | Yes | +0.220 | No | -5.00 |
+| Flavio >=39% valid vote (`4e52c227a60f`) | 0.45 / 0.85 | No | +0.390 | Yes | -5.00 |
+| Lula R1 margin <5% (`b3ed5992d76f`) | 0.47 / 0.58 | No | +0.100 | No | +6.63 |
+| Lula 2nd in R1, backfill (`b350adc7e95c`) | 0.15 / 0.2815 | No | +0.131 | Yes | -5.00 |
+
+Net for this tick's three rows: **-$3.37** (1W/2L). The backfill row's
+-$5.00 was already in the totals. Mechanical ledger after these rows:
+199 rows / 191 trades / 79W-112L / +$102.91 / dBrier +0.0334 / held-out
++$112.01 (was 196/188/78W-110L/+$106.28). Side split: no
+139/131/60W-71L/+$88.56 (adds 4e52 and b3ed); yes 60/60/19W-41L/+$14.35
+(adds 7ae1). Check: 88.56 + 14.35 = 102.91.
+
+Ruling: no boundary change. The three losing rows are the narrow-sd
+election self-models that the vote-share section's rule 2 tally (point 4)
+now grades. The one CF win is the sd-4 row, and its edge (+0.10) sat
+exactly on the veto line. That is n=1 and does not argue for loosening.
+`reconcile` B still lists 21 older unentered rows. They are already in
+the totals, and this tick does not backfill them.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork
@@ -6024,6 +6050,19 @@ about +3.5, and Lula landed on his (-0.4). Rulings:
    right. The market already priced most of this on Oct 4: the mid of
    0.40 sat above my 0.37. So this is a robustness check and not an edge
    source.
+4. **Rule 2 tally after the full family settled (RETRO-20261005-0515).**
+   Three rows used an sd below 4 and three used sd 4. The narrow rows
+   were `b350adc7e95c` (margin sd 1.8, +0.206), `4e52c227a60f` (Flavio
+   share, house sd 3.5 on a mid-Sep mean of 37.6, +0.280) and
+   `7ae14fb4b36e` (margin sd 3 from secondhand figures, +0.108). They
+   sum to +0.594 against the mid. The sd-4 rows were `2c916a0a3ef3`,
+   `094ed44d52dd` and `b3ed5992d76f` (-0.036, +0.037, -0.116), summing
+   to -0.115. The rule also covers a single candidate's vote share, not
+   only the margin: Flavio's realized 47.0 beat his mid-Sep poll mean
+   by +9.4 and his final-week mean by +3.5. A share-threshold row that
+   is 11 days out needs sd >= 5, because the drift until election day
+   adds to the poll error. All three outside-view vetoes on the narrow
+   rows were saves.
 
 ## Funnel pool_total: prose rule escalated to a mechanical check
 (DEEP-2026-08-24)
